@@ -34,7 +34,7 @@ cs50
 
 ## Features
 
-None, just projects.
+None, just projects. Some projects are missing because they were not made in CS50 IDE. The first project is from scratch.
 
 ---
 
