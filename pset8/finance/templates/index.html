@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<!-- displays the index page-->
+<!-- data passed cash, grand_total, history (list of dict), prices (list), multiplied (list)-->
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price (per share)</th>
+            <th>TOTAL</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td colspan="4">Grand Total</td>
+            <td>{{ grand_total | usd}}</td>
+        </tr>
+    </tfoot>
+    <tbody>
+    {% for prices, multip, history in lista %}
+        <tr>
+            <td>{{ history["symbol"] }}</td>
+            <td>{{ history["name"] }}</td>
+            <td>{{ history["total"] }}</td>
+            <td>{{ prices | usd}}</td>
+            <td>{{ multip | usd}}</td>
+    {% endfor %}
+        </tr>
+
+
+
+        <tr>
+            <td colspan="4">CASH (Current)</td>
+            <td>{{ cash | usd}}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

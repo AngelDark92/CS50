@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<!-- displays the company and the cost in $ per share.-->
+<table class="table table-striped table-bordered">
+    <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Company Name</th>
+                <th scope="col">Cost per share</th>
+            </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ company["symbol"] }}</td>
+        <td>{{ company["name"] }}</td>
+        <td>{{ company["price"] | usd }}</td>
+    </tr>
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <!-- Bootstrap already included in layout -->
+    <div class="col">
+        <form action="/compare" enctype="multipart/form-data" method="post">
+                <h1>Compare strings between two files</h1>
+                <input type="file" name="file1" id="file1">
+                <input type="file" name="file2" id="file2">
+                <br><br>
+                <h3>What do you want to compare?</h3>
+                <!-- this divider class was made to create a left aligned inner block -->
+                <div class="inner">
+
+                    <!-- all the "names correspond to algorithm as per application.py, that goes for the values too -->
+                    <input type="radio" name="algorithm" value="sentences" checked>Sentences<br>
+                    <input type="radio" name="algorithm" value="lines">Lines<br>
+                    <input type="radio" name="algorithm" value="substrings">Substrings
+                    of Length
+                    <input type="number" name="length"> <br>
+                </div>
+                <br><br>
+                <button type="submit">Compare</button>
+        </form>
+    </div>
+
+{% endblock %}

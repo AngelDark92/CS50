@@ -1,0 +1,53 @@
+/* Fill viewport, hide scroll bar */
+html, body
+{
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Ensure content is below navbar */
+div.container-fluid
+{
+    padding-top: 56px;
+}
+
+/* Fill viewport */
+div.container-fluid, div.row, div.col, div.jumbotron
+{
+    height: 100%;
+}
+
+/* Remove padding within column */
+div.col
+{
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+/*wanted to center everything but keeping algorithms left aligned https://stackoverflow.com/questions/1269589/css-center-block-but-align-contents-to-the-left*/
+div.inner
+{
+    display: inline-block;
+    text-align: left;
+}
+/* Add padding around form */
+form
+{
+    padding: 15px;
+}
+
+/* Wrap and scroll preformatted text */
+pre
+{
+    height: 100%;
+    overflow: auto;
+    padding: 15px;
+    white-space: pre-wrap;
+}
+
+/* Highlight spans */
+span
+{
+    background-color: #ff0;
+}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-striped table-bordered">
+    <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Price per Share</th>
+                <th scope="col">Date - Time</th>
+            </tr>
+    </thead>
+    <tbody>
+
+        <!-- jinja accepts both ["name"] and item.name for dictionaries -->
+    {%for share in history %}
+    <tr>
+        <td>{{ share.symbol }}</td>
+        <td>{{ share.name }}</td>
+        <td>{{ share.shares }}</td>
+        <td>{{ share.price }}</td>
+        <td>{{ share.date }} at {{ share.time }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

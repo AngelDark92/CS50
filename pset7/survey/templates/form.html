@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="container" id="forma">
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="page-header">Survey for favourite chocolate type</h1>
+
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post" class="needs-validation" novalidate>
+
+        <!-- https://getbootstrap.com/docs/4.0/components/forms/ -->
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom01">First name</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" name="name" required>
+        </div>
+
+        <!-- got the validation elements from bootstrap -->
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom02">Last Name</label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="Last Name" name="surname" required>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <label for="favourite">Favourite Chocolate</label>
+            <select class="form-control" id="favourite" name="favourite" required>
+                <option disabled selected value="">---</option>
+                <option value="Milk">Milk</option>
+                <option value="Dark">Dark</option>
+                <option value="White">White</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="sex" id="sex" value="Man" checked>
+            <label class="form-check-label" for="sex">Man</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="sex" id="sex" value="Woman" checked>
+            <label class="form-check-label" for="sex">Woman</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="sex" id="sex" value="PNTS (Prefer not to say)" checked>
+            <label class="form-check-label" for="sex">Prefer not to say</label>
+        </div>
+
+        <br>
+
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="check_privacy" name="check_privacy">
+            <label class="form-check-label" for="check_privacy">Make name and surname public?</label>
+        </div>
+
+        <br><br>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+</div>
+
+<script>
+// Script imported from bootstrap validation page
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+{% endblock %}

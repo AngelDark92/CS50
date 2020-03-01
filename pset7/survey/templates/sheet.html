@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<div class="container" id="forma">
+    <!-- table will be styled per https://datatables.net/examples/styling/bootstrap4 -->
+    <table class="table table-striped table-bordered" id="example">
+        <thead>
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Preferred Chocolate</th>
+                <th scope="col">Sex</th>
+            </tr>
+        </thead>
+        <tbody>
+
+<!-- for loop to get the strings and post them in the html -->
+                {% for rows in lista %}
+                <tr>
+                    <td>{{ rows["name"] }}</td>
+                    <td>{{ rows["surname"] }}</td>
+                    <td>{{ rows["favourite"] }}</td>
+                    <td>{{ rows["sex"] }}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+// to add some new functionalities to the table, pages, search and number of items to visualize
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
+{% endblock %}

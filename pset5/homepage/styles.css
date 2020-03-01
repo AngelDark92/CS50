@@ -1,0 +1,95 @@
+/* body alignment center and adjusting padding */
+body
+{
+    text-align: center;
+    padding:0;
+    margin:0;
+    height:100%;
+}
+
+html
+{
+    padding:0;
+    margin:0;
+    height:100%;
+}
+
+header, job
+{
+    position: absolute;
+}
+
+h3
+{
+    left: 0;
+    font-size: small;
+    text-align: left;
+    font-family: "Verdana", "Times New Roman", "Times", "serif";
+}
+
+header
+{
+    left: 0;
+    font-size: large;
+    color: red;
+    font-family: "Verdana", "Times New Roman", "Times", "serif";
+    text-align: left;
+}
+
+/* making all the links in h1 be black at all times, Link to go home */
+h1 a:link, a:hover, a:visited, a:active
+{
+    color: black;
+    text-decoration: none;
+}
+
+.top
+{
+    height: 40px;
+    margin-top:4px;
+    margin-top:10px;
+    display: table;
+    width: 100%;
+    text-align:center;
+}
+
+h1
+{
+    text-align: left;
+    font-size: xx-large;
+    font-weight: bold;
+    color: blue;
+    font-family: "Verdana", "Times New Roman", "Times", "serif";
+}
+
+h2
+{
+    text-align: center;
+    color: Blue;
+    font-size: x-large;
+    font-style: italic;
+}
+
+
+footer
+{
+    text-align: center;
+    color: black;
+    font-size: xx-small;
+    font-style: italic;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Jumbotron colour, fonts and text alignment */
+.jumbtron
+{
+    background-color: #d6d6d6;
+    color: black;
+    font-family: "Monospace", "Times New Roman", "Times", "serif";
+    font-size: small;
+    text-align: left;
+}
+
